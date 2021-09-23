@@ -15,11 +15,11 @@ function calculateLoan() {
     } else {
       document.getElementById('payment').textContent = paymentperbulan
       document.getElementById('jatuhTempo').textContent = jatuhTempo(Number(month))
-      bulanan = paymentperbulan
-      totalPinjaman = amount
-      tenorBulan = month
-      tempoAkhir = jatuhTempo(Number(month))
     }
+    bulanan = paymentperbulan
+    totalPinjaman = amount
+    tenorBulan = month
+    tempoAkhir = jatuhTempo(Number(month))
 }
 
 
