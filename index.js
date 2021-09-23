@@ -1,4 +1,4 @@
-function calculateLoan(params) {
+function calculateLoan() {
     let amount = document.querySelector('#amount').value
     let month = document.querySelector('input[name=month]:checked').value
     let monthlyInterest = amount * (5/100/month)
