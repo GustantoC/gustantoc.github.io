@@ -8,8 +8,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
 
+  <label for="amount">Loan Amount:</label>
+  <input  id="amount" type="number" value="1000000" onkeydown="calculateLoan()"><br>
+  <label for="1">1</label>
+  <input type="radio" name="month" id="1" checked onclick="calculateLoan()" value="1"><br>
+  <label for="3">3</label>
+  <input type="radio" name="month" id="3" onclick="calculateLoan()" value="3"><br>
+  <label for="6">6</label>
+  <input type="radio" name="month" id="6" onclick="calculateLoan()" value="6"><br>
+  <label for="6">9</label>
+  <input type="radio" name="month" id="9" onclick="calculateLoan()" value="9"><br>
+  <label for="6">12</label>
+  <input type="radio" name="month" id="12" onclick="calculateLoan()" value="12"><br>
+
+  <h1 id="payment"></h1>
+  
   <script src="index.js"></script>
 </body>
 </html>
