@@ -8,7 +8,58 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+
+  <div id="page1">
+    <h1>Pinjaman Quimper</h1>
+    <label for="namaUser">Nama</label>
+    <input type="text" name="namaUser" id="namaUser" required>
+    <label for="ktpUser">Nomor KTP</label>
+    <input type="number" name="ktpUser" id="ktpUser" required>
+    <button onclick="nextPage('page1','page2')">Next</button>
+  </div>
+
+  <div id="page2">
+    <h1 id="greetingsNama">Halo, nama</h1>
+    <label for="jumlahPinjaman">Jumlah Pinjaman</label>
+    <input type="number" name="jumlahPinjaman" id="jumlahPinjaman" required>
+    <span style="color: red;">min. Rp 1.000.000</span>
+    <br>
+    <label for="lamaPinjaman">Lama Pinjaman</label>
+    <input type="number" name="lamaPinjaman" id="lamaPinjaman" min=1 max=12 onKeyDown="return false" required> Bulan
+    <br>
+    <span id="tenorBulanan">Bulanan anda adalah : </span>
+    <br>
+    Jatuh Tempo
+    <span id="jatuhTempo"></span>
+    <br>
+    <button onclick="nextPage('page2','page3')">next</button>
+    <br>
+    <button onclick="nextPage('page2','page1')">Back</button>
+  </div>
+
+  <div id="page3">
+    <h1 id="greetingsNama">Halo, nama</h1>
+    <h1 id="greetingsKTP">KTP: </h1>
+    <p>BERIKUT ADALAH RINGKASAN PINJAMAN</p>
+    <ul id="ringkasan">
+      <li id="TotalPinjaman">Total Pinjaman : Rp. xxx xxx xxx</li>
+      <li id="Tenor">Tenor : x Bulan</li>
+      <li id="Bulanan">Bulanan : Rp. xxx.xxx.xxx</li>
+      <li id="JatuhTempo">Jatuh Tempo: dd-mm-yyyy</li>
+    </ul>
+    
+    <label for="noRek">Nomo Rekening</label>
+    <input type="number" name="noRek" id="noRek" required>
+
+    <button onclick="nextPage('page3','page4')">OK</button>
+    <br>
+    <button onclick="nextPage('page3','page2')">Cancel</button>
+  </div>
+
+  <div id="page4">
+    <h1>SELAMAT! PINJAMAN ANDA BERHASIL</h1>
+    <button onclick="nextPage('page4','page1')">Back</button>
+  </div>
 
   <script src="index.js"></script>
 </body>
