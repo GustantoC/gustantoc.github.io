@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,71 +8,82 @@
   <title>Pinjaman Quimper</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
   <div id="page1">
-    <h1>Pinjaman Quimper</h1>
-    <label for="namaUser">Nama</label>
-    <input type="text" name="namaUser" id="namaUser" required>
-    <label for="ktpUser">Nomor KTP</label>
-    <input type="number" name="ktpUser" id="ktpUser" required>
-    <button onclick="nextPage('page1','page2')">Next</button>
+    <div id="logo">
+      <h1><a href="index.html" style="text-decoration: none; cursor: pointer;">Pinjaman<span>Kita</span></a></h1>
+    </div>
+    <div class="gambar-content">
+      <h2>Ajukan pinjaman <span>lebih mudah</span><br>dengan proses cepat</h2>
+      <div>
+        <label for="namaUser"></label>
+        <input type="text" placeholder="Nama" name="namaUser" id="namaUser" required>
+        <label for="ktpUser"></label>
+        <input type="text" placeholder="Nomor KTP" name="ktpUser" id="ktpUser" required>
+        <button class="button" onclick="nextPage('page1','page2')"
+          style="text-decoration: none; cursor: pointer;">Ajukan Pinjaman</button>
+      </div>
+    </div>
   </div>
 
   <div id="page2">
     <h1 id="greetingsNama">Halo, nama</h1>
-    <br>
-    <label for="lamaPinjaman">Lama Pinjaman</label>
-    <label for="amount">Loan Amount:</label>
-    <input  id="amount" type="number" value="1000000" onkeyup="calculateLoan()"><br>
-    <label for="1">1</label>
-    <input type="radio" name="month" id="1" checked onclick="calculateLoan()" value="1"><br>
-    <label for="3">3</label>
-    <input type="radio" name="month" id="3" onclick="calculateLoan()" value="3"><br>
-    <label for="6">6</label>
-    <input type="radio" name="month" id="6" onclick="calculateLoan()" value="6"><br>
-    <label for="9">9</label>
-    <input type="radio" name="month" id="9" onclick="calculateLoan()" value="9"><br>
-    <label for="12">12</label>
-    <input type="radio" name="month" id="12" onclick="calculateLoan()" value="12"><br>
-    
-    <span id="tenorBulanan">Bulanan anda adalah : </span>
-    <h1 id="payment"></h1>
-    <br>
-    <br>
-    Jatuh Tempo
-    <h1 id="jatuhTempo"></h1>
-    <br>
-    <button onclick="nextPage('page2','page3')">next</button>
-    <br>
-    <button onclick="nextPage('page2','page1')">Back</button>
+    <h2 id="silakan">Silakan Simulasikan Pinjamanmu</h2>
+    <div class="kanan">
+      <section id="gambarbiru">
+        <div id="justify">
+          <label class="font" for="amount">Biaya Pinjaman :</label>
+          <input class="loan" id="amount" type="number" value="1000000" onkeyup="calculateLoan()"><br><br>
+          <div class="container">
+            <label class="font" for="lamaPinjaman">Durasi Pinjaman dalam bulan
+            </label><br><br>
+            <label class="font" for="1">1</label>
+            <input class="radio" type="radio" name="month" id="1" checked onclick="calculateLoan()" value="1">
+            <label class="font" for="3">3</label>
+            <input class="radio" type="radio" name="month" id="3" onclick="calculateLoan()" value="3">
+            <label class="font" for="6">6</label>
+            <input class="radio" type="radio" name="month" id="6" onclick="calculateLoan()" value="6">
+            <label class="font" for="9">9</label>
+            <input class="radio" type="radio" name="month" id="9" onclick="calculateLoan()" value="9">
+            <label class="font" for="12">12</label>
+            <input class="radio" type="radio" name="month" id="12" onclick="calculateLoan()" value="12">
+          </div>
+          <br>
+          <span class="font" id="tenorBulanan">Pembayaran Bulanan anda </span>
+          <h2 id="payment"></h2><br><br><span class="font">Jatuh Tempo </span>
+          <h2 id="jatuhTempo"></h2><br><button class="button" onclick="nextPage('page2','page1')">Back</button>
+          <button class="button" onclick="nextPage('page2','page3')">Next</button>
+      </section>
+    </div>
   </div>
-
+  </div>
   <div id="page3">
-    <h1 id="summaryNama">Halo, nama</h1>
+    <h1 id="summaryNama">Halo,
+      nama</h1>
     <h1 id="summaryKTP">KTP: </h1>
-    <p>BERIKUT ADALAH RINGKASAN PINJAMAN</p>
+    <p class="font">BERIKUT ADALAH RINGKASAN PINJAMAN</p>
     <ul>
-      <li id="summaryTotalPinjaman">Total Pinjaman : Rp. xxx xxx xxx</li>
-      <li id="summaryTenor">Tenor : x Bulan</li>
-      <li id="summaryBulanan">Bulanan : Rp. xxx.xxx.xxx</li>
-      <li id="summaryJatuhTempo">Jatuh Tempo: dd-mm-yyyy</li>
+      <li class="font" id="summaryTotalPinjaman">Total Pinjaman : Rp. xxx xxx xxx</li>
+      <li class="font" id="summaryTenor">Tenor : x Bulan</li>
+      <li class="font" id="summaryBulanan">Bulanan : Rp. xxx.xxx.xxx</li>
+      <li class="font" id="summaryJatuhTempo">Jatuh Tempo: dd-mm-yyyy</li>
     </ul>
-    
-    <label for="noRek">Nomo Rekening</label>
+    <label class="font" for="noRek">Nomor Rekening</label>
     <input type="number" name="noRek" id="noRek" required>
-
-    <button onclick="nextPage('page3','page4')">OK</button>
-    <br>
-    <button onclick="nextPage('page3','page2')">Back</button>
+    <div id="confirm">
+      <button class="button" onclick="nextPage('page3','page2')">Back</button>
+      <button class="button" onclick="nextPage('page3','page4')">OK</button>
+    </div>
+    <div id="page4" class="font">
+      <div>
+        <h1>SELAMAT ! PINJAMAN ANDA TELAH DISETUJUI</h1>
+        <h2>Uang Pinjaman akan dikirimkan ke rekening anda : <span id="rekeningDisplay"></span></h2><button
+          class="button" onclick="nextPage('page4','page1')">Back</button>
+      </div>
+    </div>
   </div>
-
-  <div id="page4">
-    <h1>SELAMAT! PINJAMAN ANDA BERHASIL</h1>
-    <h2>Uang akan segera dikirim ke rekening : <span id="rekeningDisplay"></span></h2>
-    <button onclick="nextPage('page4','page1')">Back</button>
-  </div>
-
   <script src="index.js"></script>
 </body>
+
 </html>
